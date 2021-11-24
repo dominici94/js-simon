@@ -8,13 +8,32 @@
 
 // genera 5 numeri casuali da 1 a 100
 
-const arrayNumber = [];
 
-while(arrayNumber.length < 5){
-    const number = Math.round(Math.random()*99) + 1;
-    console.log(number);
-    if(!arrayNumber.includes(number)){
-        arrayNumber.push(number);
+
+const container = document.querySelector('.container');
+const numeri = generaRandom();
+
+container.append(numeri);
+
+
+
+
+function generaRandom(){
+    const arrayNumber = [];
+    while(arrayNumber.length < 5){
+        const number = Math.round(Math.random()*99) + 1;
+        console.log(number);
+        if(!arrayNumber.includes(number)){
+            arrayNumber.push(number);
+        }
     }
+    return arrayNumber;
 }
-console.log(arrayNumber);
+
+
+// Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+
+// setTimeout(funzione da attivare dopo 30 sec,30000){
+
+// }
